@@ -19,7 +19,7 @@ void loop() {
   unsigned int uS = sonar.ping_median(); // Send ping, get ping time in microseconds (uS).
   int tempC = 15;
   float offsetFromTop = 0;
-  float distanceToFuel = ((uS / 2) / (1 / ((331.5 + 0.6 * tempC) * 100 / 1000000))); 
+  float distanceToFuel = ((uS / 2) / (1 / ((331.5 + 0.6 * tempC) * 100 / 1000000)));
   float tank_length = 151.0;
   float tank_width = 68.0;
   float tank_height = 111.5;
@@ -38,14 +38,14 @@ void loop() {
     float part5 = tank_radius;
     float part6 = (asin(1 - (fuelLevel/tank_radius)));
     float part7 = part2 * ((part3 * part4) + (part5 * part6));
-    
+
     sphere_volume_cm3 = part1 - part7;
     total_volume_cm3 = sphere_volume_cm3;
   } else if (fuelLevel > tank_radius && fuelLevel <= tank_height - tank_radius ) {
     fuelLevel = fuelLevel - tank_radius;
     sphere_volume_cm3 = 274191.93;
-    total_volume_cm3 = fuelLevel * tank_width * tank_length + sphere_volume_cm3;   
-    
+    total_volume_cm3 = fuelLevel * tank_width * tank_length + sphere_volume_cm3;
+
   } else if (fuelLevel > tank_height - tank_radius) {
     fuelLevel = fuelLevel - (tank_height - tank_radius * 2);
     float part1 = ((PI * tank_radius * tank_radius * tank_length)/2);
@@ -55,13 +55,13 @@ void loop() {
     float part5 = tank_radius;
     float part6 = (asin(1 - (fuelLevel/tank_radius)));
     float part7 = part2 * ((part3 * part4) + (part5 * part6));
-    
+
     sphere_volume_cm3 = part1 - part7;
     total_volume_cm3 = sphere_volume_cm3 + ((tank_height - tank_radius * 2) * tank_length * tank_width);
-        
+
   }
-  
-  
+
+
   Serial.print("Total Volume cm3: ");
   Serial.print(total_volume_cm3);
 
@@ -74,5 +74,5 @@ void loop() {
   Serial.print("\tConverted to Gallons: ");
   Serial.print(total_volume_cm3 * cm3togal);
   Serial.println("");
-  
+
 }

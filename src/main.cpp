@@ -1,6 +1,17 @@
-#include "Arduino.h"
-#include "WifiManager.h"
+/*************
 
+Code copied from
+
+
+*******************/
+#include "Arduino.h"
+#include <WiFiManager.h>
+#include <BlynkSimpleEsp8266.h>
+
+// You should get Auth Token in the Blynk App.
+// Go to the Project Settings (nut icon).
+char auth[] = "YourAuthToken";
+;
 // Turn OFF temperature compensation if FIXEDSPEED == 1
 #define FIXEDSPEED 1
 
@@ -62,7 +73,7 @@ float getDistance(float pi_temp) {
 }
 
 void setupWifi() {
-  wifiManager.autoConnect("AutoConnectAP");
+  wifiManager.autoConnect("FuelGauge-AutoConnectAP");
   Serial.println("connected...yeey :)");
 }
 

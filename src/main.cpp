@@ -18,11 +18,10 @@ char auth[] = "YourAuthToken";
 
 // set HC-SR04 Pins
 int pingPin = 13;
-//Hello
 int inPin = 14;
 
 // ESP8266 DEEP_SLEEP interval = 5m
-int sleepInterval = 500;
+int sleepInterval = 300;
 WiFiManager wifiManager;
 
 

@@ -22,7 +22,7 @@ int pingPin = 13;
 int inPin = 14;
 
 // ESP8266 DEEP_SLEEP interval = 5m
-int sleepInterval = 300;
+int sleepInterval = 500;
 WiFiManager wifiManager;
 
 

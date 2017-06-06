@@ -4,3 +4,4 @@
 .gcc-flags.json
 .vscode/browse.vc.db*
 .vscode/
+.pioenvs

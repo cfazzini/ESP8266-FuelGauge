@@ -17,7 +17,8 @@ char auth[] = "YourAuthToken";
 
 
 // set HC-SR04 Pins
-int pingPin = 12;
+int pingPin = 13;
+//Hello
 int inPin = 14;
 
 // ESP8266 DEEP_SLEEP interval = 5m

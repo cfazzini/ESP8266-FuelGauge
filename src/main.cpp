@@ -72,6 +72,11 @@ float getDistance(float pi_temp) {
   return microsecondsToCentimeters(duration, c);
 }
 
+float getFuelLevel (float distance) {
+
+
+
+}
 void setupWifi() {
   wifiManager.autoConnect("FuelGauge-AutoConnectAP");
   Serial.println("connected...yeey :)");
